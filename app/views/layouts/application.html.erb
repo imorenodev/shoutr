@@ -8,6 +8,20 @@
 </head>
 <body>
 
+  <div>
+    <% if signed_in? %>
+      welcome <%= current_user.username %>
+      <%= link_to "Log Out", session_path, method: :delete, data: {confirm: "Are you sure?" } %>
+    <% else %>
+      <%= link_to "Sign up", new_user_path %>
+      <%= link_to "Sign in", new_session_path %>
+    <% end %>
+  </div>
+
+  <% if notice %>
+  <%= notice %>
+  <% end %>
+
 <%= yield %>
 
 </body>

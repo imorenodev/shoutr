@@ -1,0 +1,4 @@
+<%= form_for(@shout) do |form| %> <!-- give form_for the object and it takes the class type and discerns which path helper to reference and send the params to that route/controller action -->
+  <%= form.text_area :content %>
+  <%= form.submit "Shout!" %>
+<% end %>

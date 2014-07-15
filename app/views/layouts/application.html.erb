@@ -6,9 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="<%= [controller_name, action_name].join("-") %>">
 
-  <div>
+  <header class="top-bar">
     <% if signed_in? %>
       welcome <%= current_user.username %>
       <%= link_to "Log Out", session_path, method: :delete, data: {confirm: "Are you sure?" } %>
@@ -16,13 +16,11 @@
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Sign in", new_session_path %>
     <% end %>
+  </header>
+
+  <div id="main-content">
+    <%= yield %>
   </div>
-
-  <% if notice %>
-  <%= notice %>
-  <% end %>
-
-<%= yield %>
 
 </body>
 </html>

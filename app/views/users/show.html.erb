@@ -1,0 +1,12 @@
+<div>
+  <h1><%= @user.username %>'s Shouts</h1>
+</div>
+
+<div>
+  <h3>Following: </h3>
+  <%= render @user.followed_users %>
+</div>
+</br>
+<div>
+  <%= render @shouts %>
+</div>

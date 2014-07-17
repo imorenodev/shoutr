@@ -1,6 +1,5 @@
 class Shout < ActiveRecord::Base
   belongs_to :user
-
-  scope :chronological, -> { order(created_at: :desc) }
+  belongs_to :content, polymorphic: true
 
 end

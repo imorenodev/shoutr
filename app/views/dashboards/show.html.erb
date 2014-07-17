@@ -1,5 +1,34 @@
 <h1>dashboard</h1>
 
-<%= render "form" %>
+</br>
 
-<%= render @shouts %>
+<div>
+  <h3>Following: </h3>
+  <%= render @followed_users %>
+</div>
+
+<div>
+  <h3>Followed By: </h3>
+  <%= render @followers %>
+</div>
+
+</br>
+
+<div>
+<%= render "form" %>
+</div>
+
+</br>
+
+<div>
+  <%= form_for @photo_shout, url: photo_shouts_path do |form| %>
+    <%= form.file_field :image %>
+    <%= form.submit "Shout!" %>
+  <% end %>
+</div>
+
+</br>
+
+<div>
+<%= render @timeline %>
+</div>

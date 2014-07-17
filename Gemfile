@@ -8,6 +8,8 @@ gem 'rails', '4.1.3'
 gem 'monban'
 gem 'monban-generators'
 
+gem 'paperclip', '~> 4.1'
+
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
